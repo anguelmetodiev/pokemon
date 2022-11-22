@@ -28,6 +28,11 @@ app.get("/pokemon", (req, res) => {
     res.render("Index", pokemon)
 })
 
+// http://localhost:3000/whatever
+app.get("/pokemon/:id", (req, res) => {
+    res.send(req.params.id)
+})
+
 //Server is running on port 3000
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
