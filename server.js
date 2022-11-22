@@ -10,9 +10,17 @@ const express = require("express")
 const app = express()
 const PORT = 3000
 
+// 
+const pokemon = require("./models/pokemon")
+
 //localhost:3000 Welcome to the Pokemon App!
 app.get("/", (req, res) => {
     res.send("Welcome to the Pokemon App!")
+})
+
+// get pokemon and http://localhost:3000/pokemon you can see the JSON file bulbasaur, ivysaur, ... ,wartortle
+app.get("/pokemon", (req, res) => {
+    res.send(pokemon)
 })
 
 //Server is running on port 3000
