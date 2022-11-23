@@ -1,26 +1,24 @@
-const React = require("react");
-const pokemon = require("../models/pokemon");
-const Index = require("./Index");
+const React = require('react')
 
-class Show extends React.Component {
-    render() { 
-        const {name,img} = this.props
-        const myStyle = {
-            color: '#ffffff',
-            backgroundColor: '#000000',
-            };
+const myStyle = {
+    color:'#ffffff'
+}
 
+class Index extends React.Component{
+    render(){
+        const {pokemon} = this.props
         return (
             <div>
-                <h1 style={myStyle}>Gotta Catch 'Em All</h1>
-                <h2>{name.charAt(0).toUpperCase() + name.slice(1)}</h2>
-                <img src={img + ".jpg"} alt={name + " image"}></img>
-                <p>
-                    <a href={"/pokemon"}>Back</a>
-                </p>
+            <h1>Pokemon Battle!</h1>
+            <h2>I Summon {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
+            <br></br>
+            <div>
+                <img src = {pokemon.img}/> 
+            </div>
+            <a href = '/pokemon'> Back </a>
             </div>
         )
     }
 }
 
-module.exports = Show
+module.exports= Index
